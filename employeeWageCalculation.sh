@@ -71,9 +71,9 @@ function usingCase()
 			echo "Salary is.."$dailySalary
 			;;
 			2)
-         dailySalary=$(($fullTimeHrs * $wagePerHr ))
-         echo "Salary is.."$dailySalary
-         ;;
+         		dailySalary=$(($fullTimeHrs * $wagePerHr ))
+         		echo "Salary is.."$dailySalary
+         		;;
 			*)
 			echo "Salary is.. 0"
 			;;
@@ -98,9 +98,9 @@ function wageForMonth()
 			empHrs=0
 			;;
 			esac
-			salary=$(($wagePerHr*$empHrs))
-			echo $salary
-			totalSalary=$(($totalSalary + $salary ))
+		salary=$(($wagePerHr*$empHrs))
+		echo $salary
+		totalSalary=$(($totalSalary + $salary ))
 	done
 echo "Total Wage of Month.."$totalSalary
 }
