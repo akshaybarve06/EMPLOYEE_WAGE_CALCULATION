@@ -71,11 +71,12 @@ function usingCase()
 			echo "Salary is.."$dailySalary
 			;;
 			2)
-         dailySalary=$(($fullTimeHrs * $wagePerHr ))
-         echo "Salary is.."$dailySalary
-         ;;
+         		dailySalary=$(($fullTimeHrs * $wagePerHr ))
+         		echo "Salary is.."$dailySalary
+         		;;
 			*)
 			echo "Salary is.. 0"
+			;;
 	esac
 }
 usingCase
