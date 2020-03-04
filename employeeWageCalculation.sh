@@ -16,7 +16,7 @@ hrsPerDay=8
 isPartTime=1
 isFillTime=2
 empHrs=0
-
+noOfWorkingDays=20
 #Use_Case_1
 function attendance()
 {
@@ -76,6 +76,32 @@ function usingCase()
          ;;
 			*)
 			echo "Salary is.. 0"
+			;;
 	esac
 }
-usingCase
+#usingCase
+
+#Use_Case_5
+function wageForMonth()
+{
+	for (( i=1; i<=$noOfWorkingDays; i++ ))
+	do
+		random=$((RANDOM%3))
+		case $random in
+			1)
+			empHrs=4
+			;;
+			2)
+			empHrs=8
+			;;
+			*)
+			empHrs=0
+			;;
+			esac
+			salary=$(($wagePerHr*$empHrs))
+			echo $salary
+			totalSalary=$(($totalSalary + $salary ))
+	done
+echo "Total Wage of Month.."$totalSalary
+}
+wageForMonth
