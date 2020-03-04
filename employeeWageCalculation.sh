@@ -8,6 +8,7 @@
 echo "Welcome To Employee Wage Calculation"
 
 #variables
+
 wagePerHr=20
 partTimeHrs=4
 fullTimeHrs=8
@@ -17,6 +18,12 @@ isPartTime=1
 isFillTime=2
 empHrs=0
 noOfWorkingDays=20
+totalWorkHrs=0
+noOfDays=0
+
+
+
+
 #Use_Case_1
 function attendance()
 {
@@ -71,9 +78,9 @@ function usingCase()
 			echo "Salary is.."$dailySalary
 			;;
 			2)
-         dailySalary=$(($fullTimeHrs * $wagePerHr ))
-         echo "Salary is.."$dailySalary
-         ;;
+         		dailySalary=$(($fullTimeHrs * $wagePerHr ))
+         		echo "Salary is.."$dailySalary
+         		;;
 			*)
 			echo "Salary is.. 0"
 			;;
@@ -98,10 +105,36 @@ function wageForMonth()
 			empHrs=0
 			;;
 			esac
-			salary=$(($wagePerHr*$empHrs))
-			echo $salary
-			totalSalary=$(($totalSalary + $salary ))
+		salary=$(($wagePerHr*$empHrs))
+		echo $salary
+		totalSalary=$(($totalSalary + $salary ))
 	done
 echo "Total Wage of Month.."$totalSalary
 }
-wageForMonth
+#wageForMonth
+
+#Use_Case_6
+function tillMaxHrs()
+{
+	while [[ totalWorkHrs -lt 100 && noOfDays -lt $noOfWorkingDays  ]]
+	do
+      random=$((RANDOM%3))
+      case $random in
+         1)
+         empHrs=4
+         ;;
+         2)
+         empHrs=8
+         ;;
+         *)
+         empHrs=0
+         ;;
+       esac
+	((noOfDays++))
+	totalWorkHrs=$(($totalWorkHrs+$empHrs))
+      salary=$(($wagePerHr*$empHrs))
+      totalSalary=$(($totalSalary + $salary ))
+   done
+echo "Total Wage of Month.."$totalSalary
+}
+tillMaxHrs
