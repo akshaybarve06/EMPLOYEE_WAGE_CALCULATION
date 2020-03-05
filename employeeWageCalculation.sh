@@ -97,16 +97,16 @@ function findHrs()		# Use Case 6 Refactored Here For Output of Use Case 7
 		echo $empHrs
 }
 
-function wageCalculate() # Use Case 7 Refactored
+function wageCalculate() 	# Use Case 7 Refactored
 {
 	empHours=$1
-	wage=$(($wagePerHr + $empHours))
+	wage=$(($wagePerHr * $empHours))
 	echo  $wage
 }
 
 #Use_Case_8
 #Use_Case_9
-function wageForMonth() # Use Case 5 Refactored
+function wageForMonth() 	# Use Case 5 Refactored
 {
    while [[ totalWorkHrs -lt 100 && noOfDays -lt $noOfWorkingDays  ]]
 	do
