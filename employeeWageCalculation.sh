@@ -100,7 +100,7 @@ function findHrs()		# Use Case 6 Refactored Here For Output of Use Case 7
 function wageCalculate() # Use Case 7 Refactored
 {
 	empHours=$1
-	wage=$(($wagePerHr + $empHours))
+	wage=$(($wagePerHr * $empHours))
 	echo  $wage
 }
 
@@ -116,7 +116,6 @@ function wageForMonth() # Use Case 5 Refactored
    done
 totalSalary=$(($totalWorkHrs * $wagePerHr))
 echo "Daily Wage.."${dailyWage[@]}
-#echo "Day Numbers.."${!dailyWage[@]}
 echo "Total Wage of Month.."$totalSalary
 }
 wageForMonth
