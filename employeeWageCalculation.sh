@@ -105,6 +105,7 @@ function wageCalculate() # Use Case 7 Refactored
 }
 
 #Use_Case_8
+#Use_Case_9
 function wageForMonth() # Use Case 5 Refactored
 {
    while [[ totalWorkHrs -lt 100 && noOfDays -lt $noOfWorkingDays  ]]
@@ -116,7 +117,7 @@ function wageForMonth() # Use Case 5 Refactored
    done
 totalSalary=$(($totalWorkHrs * $wagePerHr))
 echo "Daily Wage.."${dailyWage[@]}
-#echo "Day Numbers.."${!dailyWage[@]}
+echo "Day Numbers.."${!dailyWage[@]}
 echo "Total Wage of Month.."$totalSalary
 }
 wageForMonth
